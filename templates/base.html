@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}My amazing site{% endblock %}</title>
+    </head>
+    <body style="background-color:rgb(204, 236, 240);">
+    <div id="sidebar">
+        {% block sidebar %}
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blogs</a></li>
+            </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content" >
+        {% block content %}
+        Welcome to my amazing website / blog! 
+        Enjoy the content, many, many informations you will find in! <br>
+        <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" style="width:800px;height:600px;">
+        {% endblock %}
+    </div>
+</body>
+</html>

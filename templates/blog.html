@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% for blog in blog_entries %}
+
+        <h3> {{ blog.title }} </h3>
+        <p> {{ blog.body }} </p>
+        <p>
+        {% for comment in blog.comments %}
+            {% if comment.date.month == 5 %}
+            <p style="color:rgb(4, 0, 255); font-weight: bold;">Latest post-> {{ comment.author}}: {{ comment.content }} - {{ comment.date }} </p>
+
+            {% else %}
+            <p style="color:rgb(4, 0, 255);">Older post-> {{ comment.author}}: {{ comment.content }} - {{ comment.date }} </p>
+            {% endif %}
+        {% endfor %}
+        </p>
+        <h4>Author<br>
+        <img src ="{% static 'helloworld/' %}{{blog.image}}" style="width:75px;height:100px;"> {{ blog.author }} - {{ blog.date }}
+        </h4>
+
+    {% endfor %}
+
+{% endblock %}
+
